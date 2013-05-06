@@ -1,0 +1,16 @@
+<package>
+  <description brief="VexBot">
+
+     VexBot
+
+  </description>
+  <author>Calder Phillips-Grafflin</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/VexBot</url>
+  <depend package="geometry_msgs"/>
+  <depend package="sensor_msgs"/>
+
+</package>
+
+

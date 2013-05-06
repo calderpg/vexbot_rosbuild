@@ -1,0 +1,31 @@
+<launch>
+
+  <include file="$(find VexBot)/launch/vexbot.launch" />
+
+  <node pkg="generic_tf_broadcaster" type="generic_tf_broadcaster.py" name="" output="screen" ns="vexbot_kinect">
+    <param name="target_frame" type="string" value="kinect_link" />
+    <param name="root_frame" type="string" value="vexbot_base_link" />
+    <param name="name" type="string" value="vexbot_kinect" />
+    <param name="tx" type="double" value="0.10" />
+    <param name="ty" type="double" value="0.0" />
+    <param name="tz" type="double" value="0.025" />
+    <param name="rx" type="double" value="0.0" />
+    <param name="ry" type="double" value="0.0" />
+    <param name="rz" type="double" value="0.0" />
+    <param name="rw" type="double" value="1.0" />
+  </node>
+
+  <node pkg="generic_tf_broadcaster" type="generic_tf_broadcaster.py" name="" output="screen" ns="vexbot_xtion">
+    <param name="target_frame" type="string" value="xtion_link" />
+    <param name="root_frame" type="string" value="vexbot_base_link" />
+    <param name="name" type="string" value="vexbot_xtion" />
+    <param name="tx" type="double" value="-0.10" />
+    <param name="ty" type="double" value="0.0" />
+    <param name="tz" type="double" value="0.025" />
+    <param name="rx" type="double" value="0.0" />
+    <param name="ry" type="double" value="0.0" />
+    <param name="rz" type="double" value="1.0" />
+    <param name="rw" type="double" value="0.0" />
+  </node>
+
+</launch>

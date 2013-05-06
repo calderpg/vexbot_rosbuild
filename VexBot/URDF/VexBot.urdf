@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<robot name="VexBot">
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size=".3 .18 .05"/>
+      </geometry>
+      <material name="gray">
+        <color rgba=".2 .2 .2 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="right_base">
+    <visual>
+      <geometry>
+        <box size=".1 0.4 .1"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_base_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="right_base"/>
+    <origin xyz="-0.09 0 0"/>
+  </joint>
+
+  <link name="right_front_wheel">
+    <visual>
+      <geometry>
+        <cylinder length=".1" radius="0.035"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_front_wheel_joint" type="continuous">
+    <axis xyz="0 0 1"/>
+    <parent link="right_base"/>
+    <child link="right_front_wheel"/>
+    <origin rpy="0 1.57075 0" xyz="0 0.133333333333 -0.085"/>
+    <limit effort="100" velocity="100"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  </joint>
+
+  <link name="right_back_wheel">
+    <visual>
+      <geometry>
+        <cylinder length=".1" radius="0.035"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+  </link>
+
+  <joint name="right_back_wheel_joint" type="continuous">
+    <axis xyz="0 0 1"/>
+    <parent link="right_base"/>
+    <child link="right_back_wheel"/>
+    <origin rpy="0 1.57075 0" xyz="0 -0.133333333333 -0.085"/>
+    <limit effort="100" velocity="100"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  </joint>
+
+  <link name="left_base">
+    <visual>
+      <geometry>
+        <box size=".1 0.4 .1"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <joint name="left_base_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="left_base"/>
+    <origin xyz="0.09 0 0"/>
+  </joint>
+
+  <link name="left_front_wheel">
+    <visual>
+      <geometry>
+        <cylinder length=".1" radius="0.035"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+  </link>
+
+  <joint name="left_front_wheel_joint" type="continuous">
+    <axis xyz="0 0 1"/>
+    <parent link="left_base"/>
+    <child link="left_front_wheel"/>
+    <origin rpy="0 1.57075 0" xyz="0 0.133333333333 -0.085"/>
+    <limit effort="100" velocity="100"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  </joint>
+
+  <link name="left_back_wheel">
+    <visual>
+      <geometry>
+        <cylinder length=".1" radius="0.035"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+  </link>
+
+  <joint name="left_back_wheel_joint" type="continuous">
+    <axis xyz="0 0 1"/>
+    <parent link="left_base"/>
+    <child link="left_back_wheel"/>
+    <origin rpy="0 1.57075 0" xyz="0 -0.133333333333 -0.085"/>
+    <limit effort="100" velocity="100"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  </joint>
+
+</robot>
+

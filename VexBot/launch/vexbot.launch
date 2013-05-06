@@ -1,0 +1,23 @@
+<launch>
+  <arg name="joy_topic" default="joy" />
+  <arg name="cmd_topic" default="cmd_vel" />
+  <arg name="max_linear" default="1.0" />
+  <arg name="max_angular" default="1.0" />
+  <arg name="rate" default="30.0" />
+  <arg name="port" default="/dev/ttyACM0" />
+
+  <node pkg="VexBot" type="VexBotTeleop.py" name="vexbot_teleop" output="screen" >
+    <param name="joy_topic" type="string" value="$(arg joy_topic)" />
+    <param name="cmd_topic" type="string" value="$(arg cmd_topic)" />
+    <param name="max_linear" type="double" value="$(arg max_linear)" />
+    <param name="max_angular" type="double" value="$(arg max_angular)" />
+    <param name="rate" type="double" value="$(arg rate)" />
+  </node>
+
+  <node pkg="VexBot" type="ArduBot_Driver.py" name="vexbot_driver" output="screen" >
+    <param name="port" type="string" value="$(arg port)" />
+    <param name="max_linear" type="double" value="$(arg max_linear)" />
+    <param name="max_angular" type="double" value="$(arg max_angular)" />
+  </node>
+
+</launch>
